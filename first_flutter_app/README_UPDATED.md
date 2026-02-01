@@ -9,7 +9,7 @@ Welcome to the WasteWise App, a Flutter-based mobile application developed by RV
 ## 🏗️ Project Structure Overview
 
 This Flutter project follows the standard Flutter architecture, with clear separation between cross-platform Dart code and platform-specific configurations. For a detailed exploration of each folder and file, refer to **[PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)**.
-
+ 
 ### Quick Folder Guide
 
 ```

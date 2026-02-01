@@ -7,7 +7,7 @@ Understanding the Flutter project folder structure is fundamental to building sc
 ---
 
 ## 📁 Project Folder Hierarchy
-
+ 
 ```
 first_flutter_app/
 ├── lib/                          # Core Dart application code
