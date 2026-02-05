@@ -7,16 +7,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Screen'),
-        elevation: 0,
-        backgroundColor: Colors.blue[600],
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue[50]!, Colors.blue[100]!],
+            colors: [colorScheme.primaryContainer, colorScheme.surface],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade600,
+                    color: colorScheme.primary,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Column(
@@ -44,18 +45,15 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       Text(
                         'Welcome Home!',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        style: theme.textTheme.headlineSmall?.copyWith(
+                          color: colorScheme.onPrimary,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         'Multi-Screen Navigation Demo',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white70,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: colorScheme.onPrimary.withOpacity(0.8),
                         ),
                       ),
                     ],
@@ -67,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: colorScheme.surface,
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
@@ -77,26 +75,18 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         '📱 This is the Home Screen',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey,
-                        ),
+                        style: theme.textTheme.titleMedium,
                       ),
                       const SizedBox(height: 12),
                       Text(
                         'Press the button below to navigate to the Second Screen using Navigator.pushNamed(context, \'/second\'). '
                         'This demonstrates how Flutter manages the navigation stack with named routes.',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          height: 1.6,
-                          color: Colors.grey,
-                        ),
+                        style: theme.textTheme.bodyMedium,
                       ),
                     ],
                   ),
@@ -109,16 +99,6 @@ class HomeScreen extends StatelessWidget {
                     debugPrint('Navigating to second screen...');
                     Navigator.pushNamed(context, '/second');
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 16,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -143,16 +123,6 @@ class HomeScreen extends StatelessWidget {
                     debugPrint('Navigating to scrollable views demo...');
                     Navigator.pushNamed(context, '/scrollable-views');
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 14,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -175,22 +145,20 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.yellow[50],
-                    border: Border.all(color: Colors.yellow[700]!, width: 1),
+                    color: colorScheme.secondaryContainer,
+                    border: Border.all(color: colorScheme.secondary, width: 1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.info, color: Colors.yellow[700], size: 20),
+                      Icon(Icons.info, color: colorScheme.secondary, size: 20),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
                           'The Navigator maintains a stack of screens. '
                           'When you navigate forward, the new screen is pushed onto the stack.',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.yellow[900],
-                            height: 1.4,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: colorScheme.onSecondaryContainer,
                           ),
                         ),
                       ),

@@ -6,6 +6,8 @@ class ScrollableViewsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final screenWidth = MediaQuery.of(context).size.width;
     final gridColumns = screenWidth > 900
         ? 4
@@ -16,8 +18,6 @@ class ScrollableViewsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Scrollable Views'),
-        elevation: 0,
-        backgroundColor: Colors.teal[600],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -28,7 +28,8 @@ class ScrollableViewsPage extends StatelessWidget {
               title: 'ListView Example',
               subtitle: 'Horizontal cards with ListView.builder',
               icon: Icons.view_list,
-              color: Colors.teal,
+              color: colorScheme.primary,
+              textTheme: theme.textTheme,
             ),
             const SizedBox(height: 12),
             SizedBox(
@@ -37,37 +38,35 @@ class ScrollableViewsPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 8,
                 itemBuilder: (context, index) {
-                  final shade = 100 + (index % 5) * 100;
+                  final cardOpacity = 0.18 + (index % 4) * 0.12;
                   return Container(
                     width: 160,
                     margin: const EdgeInsets.only(right: 12),
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.teal[shade],
+                      color: colorScheme.primary.withOpacity(cardOpacity),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Colors.white,
+                          backgroundColor: colorScheme.primary,
+                          foregroundColor: colorScheme.onPrimary,
                           child: Text('${index + 1}'),
                         ),
                         const SizedBox(height: 12),
                         Text(
                           'Card ${index + 1}',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            color: colorScheme.onPrimary,
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const Text(
+                        Text(
                           'Scrollable list item',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white70,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: colorScheme.onPrimary.withOpacity(0.8),
                           ),
                         ),
                       ],
@@ -83,7 +82,8 @@ class ScrollableViewsPage extends StatelessWidget {
               title: 'GridView Example',
               subtitle: 'Responsive grid with GridView.builder',
               icon: Icons.grid_view,
-              color: Colors.indigo,
+              color: colorScheme.secondary,
+              textTheme: theme.textTheme,
             ),
             const SizedBox(height: 12),
             GridView.builder(
@@ -97,19 +97,16 @@ class ScrollableViewsPage extends StatelessWidget {
               ),
               itemCount: 12,
               itemBuilder: (context, index) {
-                final color = Colors.primaries[index % Colors.primaries.length];
                 return Container(
                   decoration: BoxDecoration(
-                    color: color.shade400,
+                    color: colorScheme.secondaryContainer,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(
                     child: Text(
                       'Tile ${index + 1}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: colorScheme.onSecondaryContainer,
                       ),
                     ),
                   ),
@@ -117,7 +114,7 @@ class ScrollableViewsPage extends StatelessWidget {
               },
             ),
             const SizedBox(height: 24),
-            _buildFooterNote(),
+            _buildFooterNote(context),
           ],
         ),
       ),
@@ -128,19 +125,20 @@ class ScrollableViewsPage extends StatelessWidget {
     required String title,
     required String subtitle,
     required IconData icon,
-    required MaterialColor color,
+    required Color color,
+    required TextTheme textTheme,
   }) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.shade50,
+        color: color.withOpacity(0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.shade200),
+        border: Border.all(color: color.withOpacity(0.4)),
       ),
       child: Row(
         children: [
           CircleAvatar(
-            backgroundColor: color.shade400,
+            backgroundColor: color,
             child: Icon(icon, color: Colors.white),
           ),
           const SizedBox(width: 12),
@@ -150,19 +148,12 @@ class ScrollableViewsPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: color.shade700,
-                  ),
+                  style: textTheme.titleMedium?.copyWith(color: color),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   subtitle,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: color.shade600,
-                  ),
+                  style: textTheme.bodySmall?.copyWith(color: color),
                 ),
               ],
             ),
@@ -172,23 +163,28 @@ class ScrollableViewsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFooterNote() {
+  Widget _buildFooterNote(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.orange[50],
-        border: Border.all(color: Colors.orange[200]!, width: 1),
+        color: colorScheme.tertiaryContainer,
+        border: Border.all(color: colorScheme.tertiary, width: 1),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Row(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.info_outline, color: Colors.orange),
-          SizedBox(width: 12),
+          Icon(Icons.info_outline, color: colorScheme.tertiary),
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               'ListView.builder and GridView.builder render only what is visible, making scrolling smooth and memory-efficient even with many items.',
-              style: TextStyle(fontSize: 12, height: 1.5),
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: colorScheme.onTertiaryContainer,
+              ),
             ),
           ),
         ],

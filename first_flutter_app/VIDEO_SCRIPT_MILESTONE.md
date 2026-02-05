@@ -1,4 +1,4 @@
-# VIDEO SCRIPT: Scrollable Views with ListView and GridView
+# VIDEO SCRIPT: Consistent Styles, Colors, and Text Themes
 **Duration**: 1–2 minutes  
 **Platform**: Loom, Google Drive, or YouTube (unlisted)
 
@@ -8,84 +8,83 @@
 
 ### INTRO SECTION (0:00 - 0:15)
 **What to Show on Screen:**
-- Running Flutter app showing the scrollable views screen
-- VS Code showing scrollable_views.dart file
+- Running Flutter app (any screen showing the theme applied)
+- VS Code showing ThemeData configuration in main.dart
 
 **What to Say:**
-> "In this demo, I'll show how to build scrollable views in Flutter using ListView and GridView. These widgets help create smooth, efficient lists and grids for feeds, galleries, and catalogs."
+> "In this demo, I'll show how I applied consistent styles, colors, and text themes across the app. Using Flutter’s ThemeData keeps the UI cohesive and easy to maintain."
 
 ---
 
-### SECTION 1: ListView (0:15 - 0:45)
+### SECTION 1: Theme Setup (0:15 - 0:40)
 **What to Show on Screen:**
-- Scroll the horizontal ListView cards
-- Show ListView.builder in scrollable_views.dart
+- main.dart with ThemeData (color scheme, text themes)
+- Highlight primary color and text theme definitions
 
 **What to Say:**
-> "Here is the ListView section. I used ListView.builder to create a horizontal list of cards. The builder renders only visible items, which keeps scrolling smooth and memory-efficient."
+> "First, I configured ThemeData in main.dart. I set a primary color scheme and defined text styles for headings, body text, and buttons. This ensures typography and colors stay consistent across all screens."
 
 **Key Points:**
-- ListView arranges items in a scrollable list
-- ListView.builder is efficient for larger lists
-- Horizontal scrolling with `scrollDirection: Axis.horizontal`
+- ThemeData centralizes UI styling
+- Primary color defines app identity
+- TextTheme standardizes typography
 
 ---
 
-### SECTION 2: GridView (0:45 - 1:20)
+### SECTION 2: Consistent Colors (0:40 - 1:05)
 **What to Show on Screen:**
-- Scroll to the GridView section
-- Show GridView.builder and its grid delegate
+- App UI demonstrating consistent button colors and backgrounds
+- Highlight AppBar color and card colors
 
 **What to Say:**
-> "Next is the GridView section. I used GridView.builder with a fixed cross-axis count to create a responsive grid. The grid cells stay evenly spaced and the layout adapts well across screen sizes."
+> "Notice how the AppBar, buttons, and cards use the same color palette. By referencing the theme instead of hardcoding colors, the design stays unified and easy to update."
 
 **Key Points:**
-- GridView creates a scrollable grid of tiles
-- GridView.builder renders visible tiles only
-- Grid delegate controls columns and spacing
+- Use theme colors instead of hardcoded values
+- Consistent palette improves UX
+- Easier global updates
 
 ---
 
-### SECTION 3: Combined Scrollable Layout (1:20 - 1:45)
+### SECTION 3: Text Themes in Widgets (1:05 - 1:35)
 **What to Show on Screen:**
-- Show both ListView and GridView on the same page
-- Highlight smooth scrolling behavior
+- UI showing headings, subtitles, and body text
+- Code snippet using Theme.of(context).textTheme
 
 **What to Say:**
-> "Both the ListView and GridView are combined in a single scrollable page using SingleChildScrollView. The list scrolls horizontally, while the grid stays inside the vertical layout. This pattern is common in real apps like shopping lists and media galleries."
+> "Here I apply text styles using Theme.of(context).textTheme. Headings, subtitles, and body text follow the same typographic system, making the UI clean and professional."
 
 **Key Points:**
-- SingleChildScrollView hosts multiple scrollables
-- ListView is horizontal, GridView is vertical
-- Smooth scrolling with builder constructors
+- TextTheme enforces consistency
+- No repeated TextStyle declarations
+- Cleaner, maintainable widgets
 
 ---
 
-### WRAP-UP (1:45 - 2:00)
+### WRAP-UP (1:35 - 2:00)
 **What to Show on Screen:**
-- Final view of ListView + GridView
-- Brief code snippet of both builders
+- Final app overview
+- ThemeData snippet in main.dart
 
 **What to Say:**
-> "ListView and GridView make it easy to build scrollable, efficient UIs. Using builder constructors keeps performance fast, even with many items. This is a core Flutter skill for building feeds, catalogs, and dashboards."
+> "Using a consistent theme makes the app look polished and professional. ThemeData lets you manage colors and typography in one place, making changes fast and scalable."
 
 ---
 
 ## 📸 Required Screenshots
-- ListView section showing horizontal scroll
-- GridView section with multiple tiles
-- Full screen showing both sections together
+- Screen showing consistent AppBar and button colors
+- Screen showing consistent text hierarchy (title, subtitle, body)
+- ThemeData section in main.dart
 
 ---
 
 ## ✅ Recording Checklist
-- [ ] App running on emulator or device
-- [ ] ListView section shown and scrolled
-- [ ] GridView section shown
-- [ ] Smooth scrolling demonstrated
-- [ ] Code snippets visible in VS Code (scrollable_views.dart)
-- [ ] Clear audio explanation of ListView vs GridView
+- [ ] App running with theme applied
+- [ ] ThemeData shown in main.dart
+- [ ] Consistent colors demonstrated across widgets
+- [ ] TextTheme usage shown in widgets
+- [ ] Clear audio explanation of styling choices
 
 ---
 
-**Status**: ✅ Script Updated for Scrollable Views with ListView and GridView
+**Status**: ✅ Script Updated for Consistent Styles, Colors, and Text Themes
