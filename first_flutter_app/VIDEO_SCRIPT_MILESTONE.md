@@ -1,4 +1,4 @@
-# VIDEO SCRIPT: Hot Reload, Debug Console & Flutter DevTools
+# VIDEO SCRIPT: Multi-Screen Navigation Using Navigator and Routes
 **Duration**: 1–2 minutes  
 **Platform**: Loom, Google Drive, or YouTube (unlisted)
 
@@ -8,87 +8,90 @@
 
 ### INTRO SECTION (0:00 - 0:15)
 **What to Show on Screen:**
-- Running Flutter app (Chrome or emulator)
-- VS Code terminal visible
+- Running Flutter app showing Home Screen
+- VS Code showing main.dart with routes definition
 
 **What to Say:**
-> "In this demo, I’ll show how Hot Reload, the Debug Console, and Flutter DevTools improve Flutter development productivity. I’ll make a live UI change, log output in the console, and inspect the widget tree with DevTools."
+> "In this demo, I'll demonstrate multi-screen navigation in Flutter. I'll show how to use the Navigator class with named routes to move between different screens smoothly. This is essential for building real-world apps with multiple pages."
 
 ---
 
-### SECTION 1: Hot Reload (0:15 - 0:40)
+### SECTION 1: App Structure & Routes (0:15 - 0:35)
 **What to Show on Screen:**
-- Open a widget file (e.g., main.dart or stateless_stateful_demo.dart)
-- Change a text label or color
-- Save file
-- Press `r` in terminal to hot reload
+- Open main.dart in VS Code
+- Show the routes map definition
+- Show initialRoute and routes setup
 
 **What to Say:**
-> "Hot Reload lets me apply code changes instantly without restarting the app or losing state. I’m changing this text and saving the file. Now I press ‘r’ in the terminal, and the change appears immediately. This makes UI iteration super fast."
+> "First, I've set up the app structure using named routes. In main.dart, I defined a routes map that connects route names like '/' for Home and '/second' for the second screen. This makes navigation predictable and scalable. The initialRoute tells Flutter which screen to show when the app starts."
 
 **Key Points:**
-- Instant UI updates
-- State preserved
-- Faster iteration
+- Named routes provide clear navigation paths
+- Routes map connects screen names to widgets
+- initialRoute defines the starting screen
+- Easy to add new screens later
 
 ---
 
-### SECTION 2: Debug Console (0:40 - 1:05)
+### SECTION 2: Navigating Forward (0:35 - 1:05)
 **What to Show on Screen:**
-- Add a debugPrint() inside a button handler
-- Press the button in the app
-- Show log output in Debug Console
+- Show Home Screen in the app
+- Click the "Go to Second Screen" button
+- Show the transition to Second Screen
 
 **What to Say:**
-> "Now I’ll demonstrate the Debug Console. I added a debugPrint statement inside a button handler. When I press the button, the console logs the updated state. This helps me trace behavior, check values, and catch errors quickly."
+> "Now I'll navigate forward to the second screen. I press the button that calls Navigator.pushNamed(context, '/second'). The app smoothly transitions to the second screen. The Navigator manages the stack of screens, so we can go back whenever we want."
 
 **Key Points:**
-- Real-time logs
-- Useful for debugging
-- Works with print/debugPrint
+- Navigator.pushNamed() pushes a new screen onto the stack
+- Smooth transition animation
+- Previous screen remains in memory
+- Can pass arguments between screens
 
 ---
-
-### SECTION 3: Flutter DevTools (1:05 - 1:40)
+Navigating Backward (1:05 - 1:40)
 **What to Show on Screen:**
-- Open DevTools (VS Code command palette → Open DevTools)
-- Show Widget Inspector
-- Highlight widget tree
-- Optional: open Performance tab
+- Show Second Screen
+- Click the "Back to Home" button
+- Show the transition back to Home Screen
 
 **What to Say:**
-> "Next is Flutter DevTools. I opened it and used the Widget Inspector to view the widget tree. This helps me understand layout structure and troubleshoot UI issues. The Performance tab shows frame rendering times, which helps spot performance problems."
+> "Now I'll go back to the home screen by pressing the back button. Navigator.pop(context) removes the current screen from the stack and returns to the previous one. This manages the navigation stack automatically, so users always know how to navigate backward."
 
 **Key Points:**
-- Widget Inspector for layout debugging
-- Performance tab for frame analysis
+- Navigator.pop() returns to the previous screen
+- Navigation stack is managed automatically
+- Back button works as expected
+- State management remains consistent
 - Memory & Network tabs for deeper insights
 
 ---
 
 ### WRAP-UP (1:40 - 2:00)
 **What to Show on Screen:**
-- App running + DevTools window
+- Both screens visible in sequence
+- main.dart showing routes definition
 
 **What to Say:**
-> "Hot Reload speeds up UI changes, the Debug Console gives real-time insights, and DevTools helps inspect and optimize the app. Together, these tools make Flutter development faster, smarter, and more efficient."
+> "Using Navigator with named routes makes multi-screen apps clean, maintainable, and scalable. As your app grows, you can easily add more screens to the routes map. This pattern is used in professional Flutter apps and is essential for building complex UIs."
 
 ---
 
-## 📸 Required Screenshots
-- App after a Hot Reload update
-- Debug Console showing logs
-- Flutter DevTools open with Widget Inspector or Performance tab
+##Home Screen with "Go to Second Screen" button
+- Second Screen showing the navigation destination
+- Navigation transition in action (before/after)
 
 ---
 
 ## ✅ Recording Checklist
-- [ ] App running in debug mode
-- [ ] Hot Reload demonstrated
-- [ ] Debug console log shown
-- [ ] DevTools opened and inspected
-- [ ] Clear audio and screen visibility
+- [ ] App running on emulator or device
+- [ ] Home Screen displayed clearly
+- [ ] Navigation forward demonstrated (pushNamed)
+- [ ] Navigation backward demonstrated (pop)
+- [ ] Clear audio and smooth transitions
+- [ ] Code snippets visible (main.dart routes map)
 
 ---
 
+**Status**: ✅ Script Updated for Multi-Screen Navigation
 **Status**: ✅ Script Updated for Hot Reload, Debug Console, and DevTools

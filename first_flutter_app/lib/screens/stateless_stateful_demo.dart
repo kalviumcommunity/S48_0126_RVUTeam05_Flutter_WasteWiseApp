@@ -309,27 +309,27 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
   }
 
   /// Builds the explanation cards section
-  Widget _buildExplanationSection() {
-    return Column(
-      children: [
-        _ExplanationCard(
-          title: 'StatelessWidget',
-          subtitle: 'No Internal State',
-          description:
-              'The header at the top is a StatelessWidget. It never changes unless the parent rebuilds it with new data.',
-          color: Colors.blue,
-        ),
-        const SizedBox(height: 12),
-        _ExplanationCard(
-          title: 'StatefulWidget',
-          subtitle: 'Manages State',
-          description:
-              'This entire page is a StatefulWidget. It maintains state (counter, color, etc.) and rebuilds when setState() is called.',
-          color: Colors.green,
-        ),
-      ],
-    );
-  }
+  // Widget _buildExplanationSection() {
+  //   return Column(
+  //     children: [
+  //       _ExplanationCard(
+  //         title: 'StatelessWidget',
+  //         subtitle: 'No Internal State',
+  //         description:
+  //             'The header at the top is a StatelessWidget. It never changes unless the parent rebuilds it with new data.',
+  //         color: Colors.blue,
+  //       ),
+  //       const SizedBox(height: 12),
+  //       _ExplanationCard(
+  //         title: 'StatefulWidget',
+  //         subtitle: 'Manages State',
+  //         description:
+  //             'This entire page is a StatefulWidget. It maintains state (counter, color, etc.) and rebuilds when setState() is called.',
+  //         color: Colors.green,
+  //       ),
+  //     ],
+  //   );
+  // }
 
   // ============ MAIN BUILD METHOD ============
 
@@ -368,7 +368,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
             const SizedBox(height: 24),
 
             // Educational explanation cards
-            _buildExplanationSection(),
+            // _buildExplanationSection(),
             const SizedBox(height: 24),
 
             // Additional info section
@@ -437,63 +437,6 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
                         : _counter <= 10
                             ? 'Medium'
                             : 'High',
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// A stateless widget that displays explanation cards
-/// This demonstrates best practices: creating reusable stateless components
-class _ExplanationCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String description;
-  final Color color;
-
-  const _ExplanationCard({
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
-        border: Border.all(color: color, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: color,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            subtitle,
-            style: TextStyle(
-              fontSize: 12,
-              color: color.withOpacity(0.7),
-            ),
-          ),
-          const SizedBox(height: 12),
-          Text(
-            description,
-            style: const TextStyle(
-              fontSize: 13,
-              height: 1.5,
-            ),
           ),
         ],
       ),
