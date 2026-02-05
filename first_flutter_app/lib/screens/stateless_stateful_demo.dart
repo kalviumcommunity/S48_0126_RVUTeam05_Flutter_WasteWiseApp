@@ -40,6 +40,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _lastAction = 'Incremented to $_counter';
       _updateColorBasedOnCounter();
     });
+    debugPrint('Counter incremented to $_counter');
   }
 
   /// Decrements the counter and updates the last action
@@ -49,6 +50,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _lastAction = 'Decremented to $_counter';
       _updateColorBasedOnCounter();
     });
+    debugPrint('Counter decremented to $_counter');
   }
 
   /// Updates the counter color based on its value
@@ -71,6 +73,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _isBoldText = !_isBoldText;
       _lastAction = _isBoldText ? 'Text style: Bold' : 'Text style: Normal';
     });
+    debugPrint('Text style toggled. Bold: $_isBoldText');
   }
 
   /// Toggles dark mode on/off
@@ -79,6 +82,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _isDarkMode = !_isDarkMode;
       _lastAction = _isDarkMode ? 'Dark mode: ON' : 'Dark mode: OFF';
     });
+    debugPrint('Dark mode toggled. Enabled: $_isDarkMode');
   }
 
   /// Resets all values to their initial state
@@ -89,6 +93,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _isBoldText = false;
       _lastAction = 'Counter reset to 0';
     });
+    debugPrint('Reset pressed. Counter: $_counter');
   }
 
   /// Changes the counter color to a random color
@@ -98,6 +103,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
       _counterColor = colors[_counter % colors.length];
       _lastAction = 'Color randomized!';
     });
+    debugPrint('Color randomized to $_counterColor');
   }
 
   // ============ HELPER METHODS FOR BUILDING UI ============
@@ -120,7 +126,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Stateless & Stateful Widgets',
+            'Hot Reload & DevTools Demo',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -129,9 +135,17 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
           ),
           SizedBox(height: 8),
           Text(
-            'This demo shows how both widget types work together',
+            'Hot Reload, Debug Console, and DevTools in action',
             style: TextStyle(
               fontSize: 14,
+              color: Colors.white70,
+            ),
+          ),
+          SizedBox(height: 6),
+          Text(
+            'Hot Reload Demo: v1',
+            style: TextStyle(
+              fontSize: 12,
               color: Colors.white70,
             ),
           ),
@@ -323,7 +337,7 @@ class _StatelessStatefulDemoPageState extends State<StatelessStatefulDemoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stateless & Stateful Demo'),
+        title: const Text('Hot Reload & DevTools'),
         elevation: 0,
         backgroundColor: _isDarkMode ? Colors.grey[900] : Colors.blue[600],
       ),

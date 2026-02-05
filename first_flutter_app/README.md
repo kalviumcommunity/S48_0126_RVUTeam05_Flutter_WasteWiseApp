@@ -137,3 +137,39 @@ It improves performance and maintainability. Static components don’t need to r
 ## 📂 Demo Source File
 The demo screen is implemented here:
 [lib/screens/stateless_stateful_demo.dart](lib/screens/stateless_stateful_demo.dart)
+
+---
+
+# Sprint #2 Milestone: Hot Reload, Debug Console & Flutter DevTools
+
+## Project Title
+Hot Reload, Debug Console & DevTools Demo
+
+## Short Description
+This milestone demonstrates Flutter’s productivity tools: Hot Reload for instant UI changes, the Debug Console for real-time logs, and Flutter DevTools for widget inspection and performance analysis.
+
+## Steps Performed
+1. **Hot Reload**: changed a visible text label and pressed `r` to apply changes without losing state.
+2. **Debug Console**: used `debugPrint()` inside button handlers and verified logs.
+3. **DevTools**: opened the Widget Inspector and viewed the widget tree.
+
+## Screenshots
+- [ ] App after Hot Reload update
+- [ ] Debug Console showing logs
+- [ ] Flutter DevTools with Widget Inspector or Performance tab
+
+## Reflection
+**How does Hot Reload improve productivity?**
+It applies UI changes instantly without restarting the app, preserving state and speeding up iteration.
+
+**Why is DevTools useful for debugging and optimization?**
+It provides visual inspection of widgets and performance profiling to identify bottlenecks.
+
+**How can you use these tools in a team workflow?**
+Teams can iterate quickly with Hot Reload, log issues using Debug Console, and analyze performance with DevTools.
+
+## Video Script
+[VIDEO_SCRIPT_MILESTONE.md](VIDEO_SCRIPT_MILESTONE.md)
+
+## Milestone README
+[README_MILESTONE_HOT_RELOAD_DEVTOOLS.md](README_MILESTONE_HOT_RELOAD_DEVTOOLS.md)
