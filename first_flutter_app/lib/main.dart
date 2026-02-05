@@ -4,6 +4,7 @@ import 'screens/home_screen.dart';
 import 'screens/scrollable_views.dart';
 import 'screens/second_screen.dart';
 import 'screens/stateless_stateful_demo.dart';
+import 'screens/user_input_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         '/second': (context) => const SecondScreen(),
         '/stateless-stateful': (context) => const StatelessStatefulDemoPage(),
         '/scrollable-views': (context) => const ScrollableViewsPage(),
+        '/user-input-form': (context) => UserInputForm(),
       },
     );
   }

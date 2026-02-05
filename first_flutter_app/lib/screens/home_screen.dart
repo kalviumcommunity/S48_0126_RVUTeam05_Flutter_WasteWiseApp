@@ -141,6 +141,30 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
+                // User input form button
+                ElevatedButton(
+                  onPressed: () {
+                    debugPrint('Navigating to user input form...');
+                    Navigator.pushNamed(context, '/user-input-form');
+                  },
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.input, color: Colors.white),
+                      SizedBox(width: 8),
+                      Text(
+                        'User Input Form',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
+
                 // Info box
                 Container(
                   padding: const EdgeInsets.all(16),
