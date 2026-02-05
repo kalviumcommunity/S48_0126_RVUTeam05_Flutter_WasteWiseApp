@@ -1,4 +1,4 @@
-# VIDEO SCRIPT: Responsive Layouts Using Rows, Columns, and Containers
+# VIDEO SCRIPT: Scrollable Views with ListView and GridView
 **Duration**: 1–2 minutes  
 **Platform**: Loom, Google Drive, or YouTube (unlisted)
 
@@ -8,98 +8,84 @@
 
 ### INTRO SECTION (0:00 - 0:15)
 **What to Show on Screen:**
-- Running Flutter app showing the responsive layout on a phone
-- VS Code showing responsive_layout.dart file
+- Running Flutter app showing the scrollable views screen
+- VS Code showing scrollable_views.dart file
 
 **What to Say:**
-> "In this demo, I'll show how to build responsive layouts in Flutter using Rows, Columns, and Containers. These widgets are essential for creating apps that adapt beautifully to any screen size, whether it's a phone or tablet."
+> "In this demo, I'll show how to build scrollable views in Flutter using ListView and GridView. These widgets help create smooth, efficient lists and grids for feeds, galleries, and catalogs."
 
 ---
 
-### SECTION 1: Layout Structure - Containers, Rows & Columns (0:15 - 0:45)
+### SECTION 1: ListView (0:15 - 0:45)
 **What to Show on Screen:**
-- Open responsive_layout.dart in VS Code
-- Show the Container, Row, and Column widgets in code
-- Show the hierarchy: outer Container → Column → inner Containers/Rows
+- Scroll the horizontal ListView cards
+- Show ListView.builder in scrollable_views.dart
 
 **What to Say:**
-> "Let me show you the layout structure. At the top is a Container for the header. Below that, I have a Row with two Columns side by side. Each section is wrapped in a Container for styling and alignment. Containers provide padding, color, and sizing. Rows arrange children horizontally, and Columns arrange them vertically. Together, they create flexible, reusable layouts."
+> "Here is the ListView section. I used ListView.builder to create a horizontal list of cards. The builder renders only visible items, which keeps scrolling smooth and memory-efficient."
 
 **Key Points:**
-- Containers define styling and sizing
-- Rows arrange widgets horizontally
-- Columns arrange widgets vertically
-- Combining them creates complex layouts
-- Easy to customize colors, padding, and alignment
+- ListView arranges items in a scrollable list
+- ListView.builder is efficient for larger lists
+- Horizontal scrolling with `scrollDirection: Axis.horizontal`
 
 ---
 
-### SECTION 2: Responsive Design - Phone View (0:45 - 1:10)
+### SECTION 2: GridView (0:45 - 1:20)
 **What to Show on Screen:**
-- Run app in portrait mode (phone size)
-- Show the layout adapting to phone width
-- Highlight how the Row with Columns stacks properly
-- Show how Expanded widget makes sections flexible
+- Scroll to the GridView section
+- Show GridView.builder and its grid delegate
 
 **What to Say:**
-> "Now watch how the layout adapts to a phone screen. The header spans the full width. Below it, I have two Columns in a Row that share the width equally. I used the Expanded widget to make them flexible. On smaller screens, the layout maintains perfect proportions without any overflow or cutting off. The Container padding and alignment ensure clean spacing."
+> "Next is the GridView section. I used GridView.builder with a fixed cross-axis count to create a responsive grid. The grid cells stay evenly spaced and the layout adapts well across screen sizes."
 
 **Key Points:**
-- Expanded widget makes children flexible
-- Layout scales proportionally on phones
-- No overlapping or text cutoff
-- Padding creates proper spacing
-- Alignment keeps content centered
+- GridView creates a scrollable grid of tiles
+- GridView.builder renders visible tiles only
+- Grid delegate controls columns and spacing
 
 ---
 
-### SECTION 3: Responsive Design - Tablet View (1:10 - 1:40)
+### SECTION 3: Combined Scrollable Layout (1:20 - 1:45)
 **What to Show on Screen:**
-- Switch to landscape mode or tablet emulator
-- Show the layout adapting to larger screen
-- Highlight how Rows expand to fill space
-- Show MediaQuery usage if implemented
+- Show both ListView and GridView on the same page
+- Highlight smooth scrolling behavior
 
 **What to Say:**
-> "Now let me show the same layout on a larger screen or in landscape mode. The layout automatically adapts! The Columns now have more room and maintain perfect proportions. I used MediaQuery to check screen size and adjust dimensions accordingly. The Expanded widget ensures that widgets grow to fill available space. This responsive design works seamlessly across all devices without rewriting code."
+> "Both the ListView and GridView are combined in a single scrollable page using SingleChildScrollView. The list scrolls horizontally, while the grid stays inside the vertical layout. This pattern is common in real apps like shopping lists and media galleries."
 
 **Key Points:**
-- MediaQuery checks screen dimensions
-- Layout maintains proportions on larger screens
-- Expanded widgets scale with available space
-- Same code works on all devices
-- No hardcoded pixel values needed
+- SingleChildScrollView hosts multiple scrollables
+- ListView is horizontal, GridView is vertical
+- Smooth scrolling with builder constructors
 
 ---
 
-### WRAP-UP (1:40 - 2:00)
+### WRAP-UP (1:45 - 2:00)
 **What to Show on Screen:**
-- Show both phone and tablet layouts side by side
-- Show responsive_layout.dart code snippet
-- Show the Container/Row/Column structure
+- Final view of ListView + GridView
+- Brief code snippet of both builders
 
 **What to Say:**
-> "Building responsive layouts with Rows, Columns, and Containers is fundamental to Flutter development. By combining these widgets and using Expanded and MediaQuery, you can create apps that look perfect on any device. This approach is scalable, maintainable, and professional-grade. It's how real-world apps handle multiple screen sizes."
+> "ListView and GridView make it easy to build scrollable, efficient UIs. Using builder constructors keeps performance fast, even with many items. This is a core Flutter skill for building feeds, catalogs, and dashboards."
 
 ---
 
 ## 📸 Required Screenshots
-- Responsive layout on phone (portrait mode)
-- Responsive layout on tablet or landscape mode
-- Both views showing the same content adapted proportionally
+- ListView section showing horizontal scroll
+- GridView section with multiple tiles
+- Full screen showing both sections together
 
 ---
 
 ## ✅ Recording Checklist
-- [ ] App running on phone emulator or physical device
-- [ ] Layout displayed clearly with all Containers, Rows, Columns visible
-- [ ] Phone (portrait) view shown first
-- [ ] Tablet or landscape view shown second
-- [ ] Layout visibly adapts and maintains proportions
-- [ ] Code snippets visible in VS Code (responsive_layout.dart)
-- [ ] Clear audio explaining layout structure and responsiveness
-- [ ] Smooth transitions between views
+- [ ] App running on emulator or device
+- [ ] ListView section shown and scrolled
+- [ ] GridView section shown
+- [ ] Smooth scrolling demonstrated
+- [ ] Code snippets visible in VS Code (scrollable_views.dart)
+- [ ] Clear audio explanation of ListView vs GridView
 
 ---
 
-**Status**: ✅ Script Updated for Responsive Layouts with Rows, Columns, and Containers
+**Status**: ✅ Script Updated for Scrollable Views with ListView and GridView

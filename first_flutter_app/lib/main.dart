@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/home_screen.dart';
+import 'screens/scrollable_views.dart';
 import 'screens/second_screen.dart';
 import 'screens/stateless_stateful_demo.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(),
         '/second': (context) => const SecondScreen(),
         '/stateless-stateful': (context) => const StatelessStatefulDemoPage(),
+        '/scrollable-views': (context) => const ScrollableViewsPage(),
       },
     );
   }
