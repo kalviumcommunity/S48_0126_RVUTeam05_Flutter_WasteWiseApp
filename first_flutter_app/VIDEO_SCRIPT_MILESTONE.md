@@ -1,4 +1,4 @@
-# VIDEO SCRIPT: Multi-Screen Navigation Using Navigator and Routes
+# VIDEO SCRIPT: Responsive Layouts Using Rows, Columns, and Containers
 **Duration**: 1–2 minutes  
 **Platform**: Loom, Google Drive, or YouTube (unlisted)
 
@@ -8,90 +8,98 @@
 
 ### INTRO SECTION (0:00 - 0:15)
 **What to Show on Screen:**
-- Running Flutter app showing Home Screen
-- VS Code showing main.dart with routes definition
+- Running Flutter app showing the responsive layout on a phone
+- VS Code showing responsive_layout.dart file
 
 **What to Say:**
-> "In this demo, I'll demonstrate multi-screen navigation in Flutter. I'll show how to use the Navigator class with named routes to move between different screens smoothly. This is essential for building real-world apps with multiple pages."
+> "In this demo, I'll show how to build responsive layouts in Flutter using Rows, Columns, and Containers. These widgets are essential for creating apps that adapt beautifully to any screen size, whether it's a phone or tablet."
 
 ---
 
-### SECTION 1: App Structure & Routes (0:15 - 0:35)
+### SECTION 1: Layout Structure - Containers, Rows & Columns (0:15 - 0:45)
 **What to Show on Screen:**
-- Open main.dart in VS Code
-- Show the routes map definition
-- Show initialRoute and routes setup
+- Open responsive_layout.dart in VS Code
+- Show the Container, Row, and Column widgets in code
+- Show the hierarchy: outer Container → Column → inner Containers/Rows
 
 **What to Say:**
-> "First, I've set up the app structure using named routes. In main.dart, I defined a routes map that connects route names like '/' for Home and '/second' for the second screen. This makes navigation predictable and scalable. The initialRoute tells Flutter which screen to show when the app starts."
+> "Let me show you the layout structure. At the top is a Container for the header. Below that, I have a Row with two Columns side by side. Each section is wrapped in a Container for styling and alignment. Containers provide padding, color, and sizing. Rows arrange children horizontally, and Columns arrange them vertically. Together, they create flexible, reusable layouts."
 
 **Key Points:**
-- Named routes provide clear navigation paths
-- Routes map connects screen names to widgets
-- initialRoute defines the starting screen
-- Easy to add new screens later
+- Containers define styling and sizing
+- Rows arrange widgets horizontally
+- Columns arrange widgets vertically
+- Combining them creates complex layouts
+- Easy to customize colors, padding, and alignment
 
 ---
 
-### SECTION 2: Navigating Forward (0:35 - 1:05)
+### SECTION 2: Responsive Design - Phone View (0:45 - 1:10)
 **What to Show on Screen:**
-- Show Home Screen in the app
-- Click the "Go to Second Screen" button
-- Show the transition to Second Screen
+- Run app in portrait mode (phone size)
+- Show the layout adapting to phone width
+- Highlight how the Row with Columns stacks properly
+- Show how Expanded widget makes sections flexible
 
 **What to Say:**
-> "Now I'll navigate forward to the second screen. I press the button that calls Navigator.pushNamed(context, '/second'). The app smoothly transitions to the second screen. The Navigator manages the stack of screens, so we can go back whenever we want."
+> "Now watch how the layout adapts to a phone screen. The header spans the full width. Below it, I have two Columns in a Row that share the width equally. I used the Expanded widget to make them flexible. On smaller screens, the layout maintains perfect proportions without any overflow or cutting off. The Container padding and alignment ensure clean spacing."
 
 **Key Points:**
-- Navigator.pushNamed() pushes a new screen onto the stack
-- Smooth transition animation
-- Previous screen remains in memory
-- Can pass arguments between screens
+- Expanded widget makes children flexible
+- Layout scales proportionally on phones
+- No overlapping or text cutoff
+- Padding creates proper spacing
+- Alignment keeps content centered
 
 ---
-Navigating Backward (1:05 - 1:40)
+
+### SECTION 3: Responsive Design - Tablet View (1:10 - 1:40)
 **What to Show on Screen:**
-- Show Second Screen
-- Click the "Back to Home" button
-- Show the transition back to Home Screen
+- Switch to landscape mode or tablet emulator
+- Show the layout adapting to larger screen
+- Highlight how Rows expand to fill space
+- Show MediaQuery usage if implemented
 
 **What to Say:**
-> "Now I'll go back to the home screen by pressing the back button. Navigator.pop(context) removes the current screen from the stack and returns to the previous one. This manages the navigation stack automatically, so users always know how to navigate backward."
+> "Now let me show the same layout on a larger screen or in landscape mode. The layout automatically adapts! The Columns now have more room and maintain perfect proportions. I used MediaQuery to check screen size and adjust dimensions accordingly. The Expanded widget ensures that widgets grow to fill available space. This responsive design works seamlessly across all devices without rewriting code."
 
 **Key Points:**
-- Navigator.pop() returns to the previous screen
-- Navigation stack is managed automatically
-- Back button works as expected
-- State management remains consistent
-- Memory & Network tabs for deeper insights
+- MediaQuery checks screen dimensions
+- Layout maintains proportions on larger screens
+- Expanded widgets scale with available space
+- Same code works on all devices
+- No hardcoded pixel values needed
 
 ---
 
 ### WRAP-UP (1:40 - 2:00)
 **What to Show on Screen:**
-- Both screens visible in sequence
-- main.dart showing routes definition
+- Show both phone and tablet layouts side by side
+- Show responsive_layout.dart code snippet
+- Show the Container/Row/Column structure
 
 **What to Say:**
-> "Using Navigator with named routes makes multi-screen apps clean, maintainable, and scalable. As your app grows, you can easily add more screens to the routes map. This pattern is used in professional Flutter apps and is essential for building complex UIs."
+> "Building responsive layouts with Rows, Columns, and Containers is fundamental to Flutter development. By combining these widgets and using Expanded and MediaQuery, you can create apps that look perfect on any device. This approach is scalable, maintainable, and professional-grade. It's how real-world apps handle multiple screen sizes."
 
 ---
 
-##Home Screen with "Go to Second Screen" button
-- Second Screen showing the navigation destination
-- Navigation transition in action (before/after)
+## 📸 Required Screenshots
+- Responsive layout on phone (portrait mode)
+- Responsive layout on tablet or landscape mode
+- Both views showing the same content adapted proportionally
 
 ---
 
 ## ✅ Recording Checklist
-- [ ] App running on emulator or device
-- [ ] Home Screen displayed clearly
-- [ ] Navigation forward demonstrated (pushNamed)
-- [ ] Navigation backward demonstrated (pop)
-- [ ] Clear audio and smooth transitions
-- [ ] Code snippets visible (main.dart routes map)
+- [ ] App running on phone emulator or physical device
+- [ ] Layout displayed clearly with all Containers, Rows, Columns visible
+- [ ] Phone (portrait) view shown first
+- [ ] Tablet or landscape view shown second
+- [ ] Layout visibly adapts and maintains proportions
+- [ ] Code snippets visible in VS Code (responsive_layout.dart)
+- [ ] Clear audio explaining layout structure and responsiveness
+- [ ] Smooth transitions between views
 
 ---
 
-**Status**: ✅ Script Updated for Multi-Screen Navigation
-**Status**: ✅ Script Updated for Hot Reload, Debug Console, and DevTools
+**Status**: ✅ Script Updated for Responsive Layouts with Rows, Columns, and Containers
