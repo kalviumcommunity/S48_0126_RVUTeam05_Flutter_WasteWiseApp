@@ -137,6 +137,40 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
+                // Scrollable views demo button
+                ElevatedButton(
+                  onPressed: () {
+                    debugPrint('Navigating to scrollable views demo...');
+                    Navigator.pushNamed(context, '/scrollable-views');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 14,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.view_list, color: Colors.white),
+                      SizedBox(width: 8),
+                      Text(
+                        'Open Scrollable Views',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
+
                 // Info box
                 Container(
                   padding: const EdgeInsets.all(16),
